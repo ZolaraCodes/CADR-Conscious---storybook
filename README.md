@@ -28,6 +28,15 @@ The Air Quality Calculator is a web application built with React that allows you
 
 5. The calculated CADR values in CFM and m³/h will be displayed below.
 
+
+## Testing
+
+1. There is a Jest testing file in the stores folder.
+
+2. To make sure calculator is running properly run this command:
+                npm run test
+
+
 ## Contributing
 
 Contributions to the Air Quality Calculator are welcome! If you find any issues or would like to add new features, please open an issue or submit a pull request.
