@@ -4,8 +4,6 @@ const AirQualityCalculator = () => {
   let [ach, setACH] = useState("");
   let [roomArea, setRoomArea] = useState("");
   let [ceilingHeight, setCeilingHeight] = useState("");
-  let [cadrCFM, setCADRCFM] = useState("");
-  let [cadrM3H, setCADRM3H] = useState("");
 
   let handleACHChange = (event) => {
     let value = event.target.value;
@@ -30,10 +28,12 @@ const AirQualityCalculator = () => {
 
   let calculateCADR = () => {
     let cadrValueCFM = (ach * roomArea * ceilingHeight) / 60;
-    setCADRCFM(cadrValueCFM.toFixed(2));
-
     let cadrValueM3H = cadrValueCFM * 1.699;
-    setCADRM3H(cadrValueM3H.toFixed(2));
+
+    return {
+      cadrCFM: cadrValueCFM.toFixed(2),
+      cadrM3H: cadrValueM3H.toFixed(2)
+    };
   };
 
   return (
@@ -61,9 +61,15 @@ const AirQualityCalculator = () => {
           />
         </label>
       </div>
-      <button onClick={calculateCADR}>Calculate CADR</button>
-      {cadrCFM && <p>CADR (CFM): {cadrCFM}</p>}
-      {cadrM3H && <p>CADR (m³/h): {cadrM3H}</p>}
+      <button data-testid="calculate-button" onClick={calculateCADR}>
+        Calculate CADR
+      </button>
+      {ach && roomArea && ceilingHeight && (
+        <>
+          <p data-testid="cadr-cfm">CADR (CFM): {calculateCADR().cadrCFM}</p>
+          <p data-testid="cadr-m3h">CADR (m³/h): {calculateCADR().cadrM3H}</p>
+        </>
+      )}
     </div>
   );
 };

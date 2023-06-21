@@ -13,7 +13,7 @@ The Air Quality Calculator is a web application built with React that allows you
 2. Navigate to the project directory in your terminal.
 3. Run the following command to install the dependencies:
                 npm install
-
+4. rename storybook to .storybook
 ## Usage
 
 1. Start the development server by running the following command:
