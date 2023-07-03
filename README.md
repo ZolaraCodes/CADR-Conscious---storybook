@@ -1,4 +1,5 @@
 # CADR-Conscious---storybook
+
 The Air Quality Calculator is a web application built with React that allows you to calculate the Clean Air Delivery Rate (CADR) based on the Air Changes per Hour (ACH), Room Area, and Ceiling Height of a room.
 
 ## Features
@@ -10,15 +11,28 @@ The Air Quality Calculator is a web application built with React that allows you
 ## Installation
 
 1. Clone the repository or download the source code.
+   ```bash
+   git clone [repository_url]
+
+
 2. Navigate to the project directory in your terminal.
+
+cd CADR-Conscious---storybook
+
 3. Run the following command to install the dependencies:
-                npm install
-4. rename storybook to .storybook
+
+npm install
+
+4. Rename the `storybook` directory to `.storybook` to enable Storybook.
+
+mv storybook .storybook
+
 ## Usage
 
 1. Start the development server by running the following command:
 
-                 npm start 
+npm start
+
 
 2. Open your web browser and visit `http://localhost:3000` to access the Air Quality Calculator.
 
@@ -28,13 +42,24 @@ The Air Quality Calculator is a web application built with React that allows you
 
 5. The calculated CADR values in CFM and m³/h will be displayed below.
 
+## Storybook
+
+1. To view the Storybook for the CADR-Conscious project, run the following command:
+
+npm run storybook
+
+
+2. Open your web browser and visit `http://localhost:6006` to access the Storybook interface.
+
+3. Explore the different components and their variations in Storybook.
 
 ## Testing
 
-1. There is a Jest testing file in the stores folder.
+1. There is a Jest testing file in the `stores` folder.
 
-2. To make sure calculator is running properly run this command:
-                npm run test
+2. To ensure the calculator is running properly, run this command:
+
+npm run test
 
 
 ## Contributing
@@ -44,4 +69,3 @@ Contributions to the Air Quality Calculator are welcome! If you find any issues 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
